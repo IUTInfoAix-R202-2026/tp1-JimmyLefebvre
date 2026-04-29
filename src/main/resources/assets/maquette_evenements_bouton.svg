@@ -1,0 +1,20 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+  <!-- Fond fenêtre -->
+  <rect x="0" y="0" width="400" height="200" rx="6" fill="#ffffff" stroke="#666" stroke-width="2"/>
+  <!-- Titre fenêtre -->
+  <rect x="1" y="1" width="398" height="30" rx="5" fill="#e0e0e0" stroke="#bbb" stroke-width="1"/>
+  <text x="200" y="21" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#666">Exercice 5 — Événements bouton</text>
+  <!-- Bouton -->
+  <rect x="120" y="55" width="160" height="42" rx="6" fill="#4a90d9" stroke="#3a7bc8" stroke-width="1"/>
+  <text x="200" y="82" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="white">Clique-moi</text>
+  <!-- Annotation bouton -->
+  <text x="310" y="80" font-family="sans-serif" font-size="10" fill="#999">id: bouton-clique-moi</text>
+  <!-- Label compteur -->
+  <rect x="140" y="120" width="120" height="36" rx="4" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="200" y="144" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#333">3 clics</text>
+  <!-- Annotation label -->
+  <text x="285" y="142" font-family="sans-serif" font-size="10" fill="#999">id: compteur</text>
+  <!-- Annotation VBox -->
+  <line x1="90" y1="50" x2="90" y2="165" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="20" y="110" font-family="sans-serif" font-size="10" fill="#999">VBox</text>
+</svg>
