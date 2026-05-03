@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.api.FxRobot;
@@ -27,7 +26,7 @@ class PremiereSceneTest {
 
   // --- Étape 1 : afficher la fenêtre ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void laFenetreEstVisible(FxRobot robot) {
     assertThat(stage.isShowing())
@@ -37,7 +36,7 @@ class PremiereSceneTest {
 
   // --- Étape 2 : créer une Scene et l'attacher au Stage ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void laSceneExiste(FxRobot robot) {
     assertThat(stage.getScene())
@@ -47,7 +46,7 @@ class PremiereSceneTest {
 
   // --- Étape 3 : utiliser un BorderPane comme racine ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leRootEstUnBorderPane(FxRobot robot) {
     assertThat(stage.getScene().getRoot())
@@ -57,7 +56,7 @@ class PremiereSceneTest {
 
   // --- Étape 4 : créer un Label ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void unLabelEstPresent(FxRobot robot) {
     assertThat(robot.lookup(".label").queryAll())
@@ -67,7 +66,7 @@ class PremiereSceneTest {
 
   // --- Étape 5 : donner le bon texte au Label ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leLabelAfficheLeBonTexte(FxRobot robot) {
     Label label = robot.lookup("Bonjour, JavaFX !").queryAs(Label.class);
@@ -78,7 +77,7 @@ class PremiereSceneTest {
 
   // --- Étape 6 : placer le Label au centre du BorderPane ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leLabelEstAuCentreDuBorderPane(FxRobot robot) {
     BorderPane root = (BorderPane) stage.getScene().getRoot();
