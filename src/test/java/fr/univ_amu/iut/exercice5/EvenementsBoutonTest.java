@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.api.FxRobot;
@@ -34,7 +33,7 @@ class EvenementsBoutonTest {
 
   // --- Étape 1 : afficher la fenêtre ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void laFenetreEstVisible(FxRobot robot) {
     assertThat(stage.isShowing())
@@ -44,7 +43,7 @@ class EvenementsBoutonTest {
 
   // --- Étape 2 : créer une Scene ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void laSceneExiste(FxRobot robot) {
     assertThat(stage.getScene())
@@ -52,7 +51,7 @@ class EvenementsBoutonTest {
         .isNotNull();
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void laRacineEstUnVBox(FxRobot robot) {
     assertThat(stage.getScene().getRoot())
@@ -62,7 +61,7 @@ class EvenementsBoutonTest {
 
   // --- Étape 3 : ajouter un bouton ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leBoutonExiste(FxRobot robot) {
     Button bouton = robot.lookup("#bouton-clique-moi").queryAs(Button.class);
@@ -71,7 +70,7 @@ class EvenementsBoutonTest {
 
   // --- Étape 4 : le bouton a le bon texte ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leBoutonAfficheLeBonTexte(FxRobot robot) {
     Button bouton = robot.lookup("#bouton-clique-moi").queryAs(Button.class);
@@ -80,14 +79,14 @@ class EvenementsBoutonTest {
 
   // --- Étape 5 : ajouter un label pour le compteur ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leLabelCompteurExiste(FxRobot robot) {
     Label compteur = robot.lookup("#compteur").queryAs(Label.class);
     assertThat(compteur).as("un Label avec l'id 'compteur' doit être présent").isNotNull();
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leLabelAfficheZeroClicsInitialement(FxRobot robot) {
     Label compteur = robot.lookup("#compteur").queryAs(Label.class);
@@ -98,7 +97,7 @@ class EvenementsBoutonTest {
 
   // --- Étape 6 : brancher l'écouteur et vérifier le comportement ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void troisClicsAffichent3Clics(FxRobot robot) {
     Button bouton = robot.lookup("#bouton-clique-moi").queryAs(Button.class);
