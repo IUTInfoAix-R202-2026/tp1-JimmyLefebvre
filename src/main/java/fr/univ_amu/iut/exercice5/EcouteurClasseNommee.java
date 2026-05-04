@@ -20,6 +20,7 @@ public class EcouteurClasseNommee implements EventHandler<ActionEvent> {
 
   @Override
   public void handle(ActionEvent event) {
+    compteur.incrementer();
     // TODO exercice 5 : incrémenter le compteur à chaque appel.
     //
     // Une seule ligne suffit. Utilise la méthode incrementer() de Compteur.

@@ -3,7 +3,6 @@ package fr.univ_amu.iut.exercice5;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import javafx.event.ActionEvent;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -12,7 +11,7 @@ import org.junit.jupiter.api.Test;
  */
 class EcouteurClasseNommeeTest {
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // sss@Disabled("Retire cette annotation pour activer le test")
   @Test
   void handleIncrementeLeCompteur() {
     Compteur compteur = new Compteur();
