@@ -422,7 +422,7 @@ Le fichier `App.java` (dans `src/main/java/fr/univ_amu/iut/`) est un **menu prin
 - Cliquez sur **"Exercice 1 - Première fenêtre"** : votre fenêtre vide s'ouvre (si vous avez bien implémenté `show()`).
 - Si vous cliquez sur un exercice que vous n'avez pas encore implémenté, une popup vous indiquera "rien à afficher", c'est normal.
 
-Le lanceur est un outil pratique pour **tester visuellement** chaque exercice au fil de votre progression. Vous pouvez aussi lancer directement un exercice en faisant clic droit sur sa classe → **Run** dans VS Code.
+Le lanceur est un outil pratique pour **tester visuellement** chaque exercice au fil de votre progression. Vous pouvez aussi lancer directement un exercice en cliquant sur **Run** au-dessus de sa méthode `main()` (CodeLens de l'extension Java), ou par clic droit sur sa classe → **Run Java** dans VS Code.
 
 Pour fermer l'application, fermez la fenêtre JavaFX ou appuyez sur `Ctrl+C` dans le terminal.
 
