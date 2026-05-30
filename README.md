@@ -1149,10 +1149,10 @@ Appliquez la [boucle de travail](#boucle-de-travail-pour-chaque-test) : activez 
 3. **`leBoutonDemarrerExiste`** : créez un `Button` "Démarrer" avec l'id `btn-start`. Placez-le dans un `HBox`, ajoutez le HBox au VBox. Pour coller à la maquette, c'est le bouton primaire **bleu** : `btnStart.setStyle("-fx-background-color: #4a90d9; -fx-text-fill: white; -fx-font-weight: bold;")`.
 4. **`leBoutonPauseExiste`** : ajoutez un Button "Pause" (id `btn-pause`) au HBox.
 5. **`leBoutonReprendreExiste`** : ajoutez un Button "Reprendre" (id `btn-resume`) au HBox.
-6. **`leBoutonStopExiste`** : ajoutez un Button "Stop" (id `btn-stop`) au HBox.
+6. **`leBoutonStopExiste`** : ajoutez un Button "Stop" (id `btn-stop`) au HBox. Pour coller à la maquette, **Pause, Reprendre et Stop partagent un même style secondaire gris et plat** (`-fx-background-color: #cccccc; -fx-text-fill: #333333; -fx-border-color: #aaaaaa; -fx-background-radius: 6;`), arrondi comme « Démarrer ».
 7. **`leSliderExiste`** : créez un [`Slider`](https://openjfx.io/javadoc/25/javafx.controls/javafx/scene/control/Slider.html) avec l'id `slider-vitesse` et ajoutez-le au VBox.
 8. **`leSliderALesBonnesLimites`** : configurez le slider avec `new Slider(0.1, 5, 1)` (min, max, valeur initiale).
-9. **`laBalleExiste`** : créez un `Circle` de rayon 15, couleur rouge, avec l'id `balle`. Placez-le dans un `Pane` (id `zone-animation`) et ajoutez le Pane au VBox.
+9. **`laBalleExiste`** : créez un `Circle` de rayon 15, couleur rouge, avec l'id `balle`. Placez-le dans un `Pane` (id `zone-animation`) et ajoutez le Pane au VBox. Pour coller à la maquette, **centrez la balle horizontalement** : `balle.layoutXProperty().bind(pane.widthProperty().divide(2))`.
 10. **`laZoneAnimationExiste`** : si vous avez suivi l'étape précédente, ce test devrait déjà passer.
 11. **`demarrerLanceAnimation`** : créez une [`TranslateTransition`](https://openjfx.io/javadoc/25/javafx.graphics/javafx/animation/TranslateTransition.html) de 1000ms sur le cercle, avec `fromY=10`, `toY=400`, `autoReverse=true`, `cycleCount=INDEFINITE`. Branchez le bouton Démarrer sur `transition.playFromStart()`.
 12. **`pauseArreteLAnimation`** : branchez le bouton Pause sur `transition.pause()`.
