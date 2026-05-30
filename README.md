@@ -753,7 +753,9 @@ Vérifiez votre score sur l'onglet **Actions**.
 - [`Button.setOnAction()`](https://openjfx.io/javadoc/25/javafx.controls/javafx/scene/control/ButtonBase.html#setOnAction(javafx.event.EventHandler)) : la méthode qui branche un écouteur sur un bouton
 - Trois styles d'écriture pour un même écouteur : classe nommée, classe anonyme, lambda
 
-### Maquette de l'IHM attendue
+### Maquette à reproduire
+
+Voici l'interface que vous devez construire :
 
 ![Maquette de l'exercice 5 - bouton et compteur](src/main/resources/assets/maquette_evenements_bouton.svg)
 
@@ -921,7 +923,9 @@ Vérifiez votre score sur l'onglet **Actions**. Il devrait avoir augmenté.
 - [`Button`](https://openjfx.io/javadoc/25/javafx.controls/javafx/scene/control/Button.html) et [`Pane`](https://openjfx.io/javadoc/25/javafx.graphics/javafx/scene/layout/Pane.html) pour l'interaction
 - `setOnAction()` et `setStyle()` pour le comportement dynamique
 
-### Maquette de l'IHM attendue
+### Maquette à reproduire
+
+Voici l'interface que vous devez construire :
 
 ![Maquette de la palette de couleurs](src/main/resources/assets/maquette_palette.svg)
 
@@ -1042,7 +1046,9 @@ Vérifiez votre score sur l'onglet **Actions**. Si tous les exercices sont termi
 - `autoReverse` et `cycleCount(INDEFINITE)` : faire rebondir indéfiniment
 - [`Slider`](https://openjfx.io/javadoc/25/javafx.controls/javafx/scene/control/Slider.html) : un curseur linéaire avec `valueProperty()` pour écouter les changements de valeur
 
-### Maquette de l'IHM attendue
+### Maquette à reproduire
+
+Voici l'interface que vous devez construire :
 
 ![Maquette de la balle rebondissante](src/main/resources/assets/maquette_balle_rebondissante.svg)
 
@@ -1192,7 +1198,9 @@ gh pr merge --rebase --delete-branch
 - Détection de collision avec `getBoundsInParent()`
 - Héritage et polymorphisme : `Pacman` et `Fantome` héritent de `Personnage`
 
-### Maquette du jeu
+### Maquette à reproduire
+
+Voici l'interface que vous devez construire :
 
 ![Maquette du mini-jeu Pacman](src/main/resources/assets/maquette_pacman.svg)
 
