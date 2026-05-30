@@ -650,6 +650,10 @@ Vérifiez votre score sur l'onglet **Actions**. Il devrait avoir augmenté.
 
 **Objectif** : combiner plusieurs conteneurs pour reproduire une maquette réaliste. Cet exercice vous apprend à **décomposer une interface** en zones, chacune gérée par un conteneur adapté.
 
+**Résultat attendu :**
+
+<img alt="Résultat attendu - Exercice 4 : une barre de menus (Fichier, Aide) au-dessus d'un formulaire (Nom, Email) et des boutons Valider / Annuler" src=".github/assets/apercu-ex4-mise-en-page.png" width="240"/>
+
 **Ce que vous allez découvrir** :
 - [`GridPane`](https://openjfx.io/javadoc/25/javafx.graphics/javafx/scene/layout/GridPane.html) : un conteneur en grille (lignes × colonnes) pour aligner des champs de formulaire
 - [`HBox`](https://openjfx.io/javadoc/25/javafx.graphics/javafx/scene/layout/HBox.html) : un conteneur qui aligne ses enfants horizontalement
@@ -766,6 +770,10 @@ Vérifiez votre score sur l'onglet **Actions**.
 ## Exercice 5 - Réagir à un clic
 
 **Objectif** : découvrir comment un composant JavaFX **réagit** à une action utilisateur. Vous allez brancher un écouteur sur un [`Button`](https://openjfx.io/javadoc/25/javafx.controls/javafx/scene/control/Button.html) et constater qu'un clic peut modifier l'état de l'application (ici, un compteur).
+
+**Résultat attendu :**
+
+<img alt="Résultat attendu - Exercice 5 : un bouton et un libellé compteur qui s'incrémente à chaque clic" src=".github/assets/apercu-ex5-evenements-bouton.png" width="300"/>
 
 **Ce que vous allez découvrir** :
 - [`EventHandler`](https://openjfx.io/javadoc/25/javafx.base/javafx/event/EventHandler.html) : l'interface fonctionnelle qui définit la réaction à un événement
@@ -955,6 +963,10 @@ Vérifiez votre score sur l'onglet **Actions**. Il devrait avoir augmenté.
 
 **Objectif** : **synthèse** - cet exercice mobilise l'ensemble des concepts vus jusqu'ici (layouts, composants, événements, mise à jour de labels) dans une petite application autonome. C'est le dernier exercice du TP. Il illustre aussi l'heuristique de [Nielsen #1](https://iutinfoaix-r202.github.io/cours/cm1-fondations-ihm.html#18) (**visibilité de l'état du système**) : chaque clic produit un feedback immédiat (la couleur change, le compteur se met à jour).
 
+**Résultat attendu :**
+
+<img alt="Résultat attendu - Exercice 6 : une palette de boutons de couleur qui changent le fond, avec des compteurs de clics" src=".github/assets/apercu-ex6-palette.png" width="300"/>
+
 **Ce que vous allez mobiliser** :
 - [`BorderPane`](https://openjfx.io/javadoc/25/javafx.graphics/javafx/scene/layout/BorderPane.html) et [`HBox`](https://openjfx.io/javadoc/25/javafx.graphics/javafx/scene/layout/HBox.html) pour la mise en page
 - [`Button`](https://openjfx.io/javadoc/25/javafx.controls/javafx/scene/control/Button.html) et [`Pane`](https://openjfx.io/javadoc/25/javafx.graphics/javafx/scene/layout/Pane.html) pour l'interaction
@@ -1090,6 +1102,10 @@ Vérifiez votre score sur l'onglet **Actions**. Si tous les exercices sont termi
 ## Bonus 7 - Balle rebondissante
 
 **Objectif** : découvrir les **animations** JavaFX. Une balle rebondit verticalement dans un panneau. Quatre boutons contrôlent l'animation, et un slider ajuste la vitesse en temps réel.
+
+**Résultat attendu :**
+
+<img alt="Résultat attendu - Bonus 7 : une balle dans un panneau, des boutons de contrôle et un slider de vitesse" src=".github/assets/apercu-bonus7-balle.png" width="360"/>
 
 **Ce que vous allez découvrir** :
 - [`TranslateTransition`](https://openjfx.io/javadoc/25/javafx.graphics/javafx/animation/TranslateTransition.html) : une animation qui déplace un noeud le long d'un axe
@@ -1268,6 +1284,10 @@ gh pr merge --rebase --delete-branch
 ## Bonus 8 - Mini-jeu Pacman
 
 **Objectif** : **synthèse avancée** mêlant héritage, composition graphique, événements clavier et détection de collision. Un Pacman et un Fantôme se déplacent sur un plateau de jeu, chacun contrôlé par un joueur différent.
+
+**Résultat attendu :**
+
+<img alt="Résultat attendu - Bonus 8 : un plateau de jeu avec un Pacman et un fantôme déplaçables au clavier" src=".github/assets/apercu-bonus8-pacman.png" width="480"/>
 
 **Ce que vous allez découvrir** :
 - [`Group`](https://openjfx.io/javadoc/25/javafx.graphics/javafx/scene/Group.html) : composer un personnage à partir de plusieurs formes (`Circle`, `Rectangle`, `Line`)
