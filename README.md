@@ -714,6 +714,7 @@ Appliquez la [boucle de travail](#boucle-de-travail-pour-chaque-test) : activez 
 9. **`leHBoxEstEnBas`** : créez un `HBox` et placez-le dans `borderPane.setBottom()`.
 10. **`leBoutonValiderExiste`** : ajoutez un `Button` "Valider" dans le HBox.
 11. **`leBoutonAnnulerExiste`** : ajoutez un `Button` "Annuler" dans le HBox.
+12. **Style (pour coller à la maquette, non testé)** : aérez le `GridPane` (`setHgap(10)`, `setVgap(10)`, un padding) et le `HBox` (espacement + padding), et faites de "Valider" le **bouton primaire bleu** : `valider.setStyle("-fx-background-color: #4a90d9; -fx-text-fill: white; -fx-font-weight: bold;")`.
 
 > [!TIP]
 > Pour voir votre fenêtre dans le navigateur, utilisez le VNC comme expliqué dans l'[exercice 1](#voir-votre-fenêtre-avec-vnc).
@@ -878,6 +879,7 @@ Appliquez la [boucle de travail](#boucle-de-travail-pour-chaque-test) : activez 
 5. **`leBoutonAfficheLeBonTexte`** : passez le texte `"Clique-moi"` au constructeur du Button, ou utilisez `setText()`.
 6. **`leLabelCompteurExiste`** : créez un `Label` avec l'id `compteur` et ajoutez-le au VBox.
 7. **`troisClicsAffichent3Clics`** : c'est ici que vous branchez l'écouteur. Créez un `Compteur`, puis utilisez `bouton.setOnAction(...)` pour incrémenter le compteur et mettre à jour le texte du label à chaque clic. Choisissez le style d'écouteur de votre choix (voir les 3 styles ci-dessus).
+8. **Style (pour coller à la maquette, non testé)** : centrez le contenu (`root.setAlignment(Pos.CENTER)`), donnez au bouton un **fond bleu + texte blanc gras** (`setStyle("-fx-background-color: #4a90d9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 28;")`) et **encadrez** le label (fond clair + bordure).
 
 > [!TIP]
 > Commencez par le style lambda (style 3) : c'est le plus rapide à écrire. Quand le test passe, essayez de remplacer par le style 1 ou 2 pour voir la différence de syntaxe - le test doit toujours passer.
@@ -988,7 +990,7 @@ Appliquez la [boucle de travail](#boucle-de-travail-pour-chaque-test) : activez 
 
 1. **`laFenetreEstVisible`** : appelez `show()` sur le Stage.
 2. **`laSceneExiste`** : créez un `BorderPane`, une `Scene`, et attachez-la au Stage.
-3. **`lesTroisBoutonsExistent`** : créez 3 `Button` ("Rouge", "Vert", "Bleu") avec les ids `btn-rouge`, `btn-vert`, `btn-bleu`. Placez-les dans un `HBox` et assignez le HBox à `borderPane.setTop()`.
+3. **`lesTroisBoutonsExistent`** : créez 3 `Button` ("Rouge", "Vert", "Bleu") avec les ids `btn-rouge`, `btn-vert`, `btn-bleu`. Placez-les dans un `HBox` (avec un peu d'espacement et de padding) et assignez le HBox à `borderPane.setTop()`. Pour coller à la maquette, **colorez chaque bouton** avec sa couleur de fond et un texte blanc : `btnRouge.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;")` (idem `#27ae60` pour Vert, `#2980b9` pour Bleu).
 4. **`laZoneDeCouleurExiste`** : créez un `Pane` avec l'id `zone` et placez-le au centre du BorderPane avec `setCenter()`. Donnez-lui une taille minimale avec `zone.setMinSize(300, 200)`.
 5. **`leLabelCompteursExiste`** : créez un `Label` avec l'id `compteurs` et le texte initial `"Rouge: 0  Vert: 0  Bleu: 0"`. Placez-le dans `borderPane.setBottom()`.
 6. **`cliquerRougeMetLaZoneEnRouge`** : branchez un écouteur sur le bouton Rouge qui change le style de la zone avec `zone.setStyle("-fx-background-color: red;")`.
@@ -1144,7 +1146,7 @@ Appliquez la [boucle de travail](#boucle-de-travail-pour-chaque-test) : activez 
 
 1. **`laFenetreEstVisible`** : appelez `show()`.
 2. **`laSceneExiste`** : créez un `VBox`, une `Scene`, et attachez-la au Stage.
-3. **`leBoutonDemarrerExiste`** : créez un `Button` "Démarrer" avec l'id `btn-start`. Placez-le dans un `HBox`, ajoutez le HBox au VBox.
+3. **`leBoutonDemarrerExiste`** : créez un `Button` "Démarrer" avec l'id `btn-start`. Placez-le dans un `HBox`, ajoutez le HBox au VBox. Pour coller à la maquette, c'est le bouton primaire **bleu** : `btnStart.setStyle("-fx-background-color: #4a90d9; -fx-text-fill: white; -fx-font-weight: bold;")`.
 4. **`leBoutonPauseExiste`** : ajoutez un Button "Pause" (id `btn-pause`) au HBox.
 5. **`leBoutonReprendreExiste`** : ajoutez un Button "Reprendre" (id `btn-resume`) au HBox.
 6. **`leBoutonStopExiste`** : ajoutez un Button "Stop" (id `btn-stop`) au HBox.
@@ -1198,7 +1200,7 @@ gh pr merge --rebase --delete-branch
 
 <img alt="Rendu final - Bonus 8 : un plateau de jeu avec un Pacman et un fantôme déplaçables au clavier" src=".github/assets/apercu-bonus8-pacman.png" width="480"/>
 
-Le plateau de jeu est un `Pane` de 640x480 pixels. Les personnages se déplacent sur une grille invisible de 20x20 pixels. Le Pacman est contrôlé par les **flèches directionnelles**, le Fantôme par les touches **Z/Q/S/D**.
+Le plateau de jeu est un `Pane` de 640x480 pixels, au **fond bleu nuit** (`-fx-background-color: #1a1a2e`, comme sur la maquette). Les personnages se déplacent sur une grille invisible de 20x20 pixels. Le Pacman est contrôlé par les **flèches directionnelles**, le Fantôme par les touches **Z/Q/S/D**.
 
 ### Le graphe de scène
 
