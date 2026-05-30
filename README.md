@@ -714,7 +714,7 @@ Appliquez la [boucle de travail](#boucle-de-travail-pour-chaque-test) : activez 
 9. **`leHBoxEstEnBas`** : créez un `HBox` et placez-le dans `borderPane.setBottom()`.
 10. **`leBoutonValiderExiste`** : ajoutez un `Button` "Valider" dans le HBox.
 11. **`leBoutonAnnulerExiste`** : ajoutez un `Button` "Annuler" dans le HBox.
-12. **Style (pour coller à la maquette, non testé)** : aérez le `GridPane` (`setHgap(10)`, `setVgap(10)`, un padding) et le `HBox` (espacement + padding), et faites de "Valider" le **bouton primaire bleu** : `valider.setStyle("-fx-background-color: #4a90d9; -fx-text-fill: white; -fx-font-weight: bold;")`.
+12. **Style (pour coller à la maquette, non testé)** : aérez le `GridPane` (`setHgap(10)`, `setVgap(10)`, un padding) et le `HBox` (espacement + padding). Les deux boutons ont la **même taille** (même padding + `setPrefWidth(110)`) : "Valider" est le **bouton primaire bleu** (`-fx-background-color: #4a90d9; -fx-text-fill: white; -fx-font-weight: bold;`) et "Annuler" le **bouton secondaire gris et plat** (`-fx-background-color: #cccccc; -fx-text-fill: #333333; -fx-border-color: #aaaaaa;`).
 
 > [!TIP]
 > Pour voir votre fenêtre dans le navigateur, utilisez le VNC comme expliqué dans l'[exercice 1](#voir-votre-fenêtre-avec-vnc).
