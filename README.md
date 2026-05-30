@@ -990,9 +990,9 @@ Appliquez la [boucle de travail](#boucle-de-travail-pour-chaque-test) : activez 
 
 1. **`laFenetreEstVisible`** : appelez `show()` sur le Stage.
 2. **`laSceneExiste`** : créez un `BorderPane`, une `Scene`, et attachez-la au Stage.
-3. **`lesTroisBoutonsExistent`** : créez 3 `Button` ("Rouge", "Vert", "Bleu") avec les ids `btn-rouge`, `btn-vert`, `btn-bleu`. Placez-les dans un `HBox` (avec un peu d'espacement et de padding) et assignez le HBox à `borderPane.setTop()`. Pour coller à la maquette, **colorez chaque bouton** avec sa couleur de fond et un texte blanc : `btnRouge.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;")` (idem `#27ae60` pour Vert, `#2980b9` pour Bleu).
+3. **`lesTroisBoutonsExistent`** : créez 3 `Button` ("Rouge", "Vert", "Bleu") avec les ids `btn-rouge`, `btn-vert`, `btn-bleu`. Placez-les dans un `HBox` (avec un peu d'espacement et de padding) et assignez le HBox à `borderPane.setTop()`. Pour coller à la maquette, **colorez chaque bouton** avec sa couleur de fond, un texte blanc et des coins arrondis : `btnRouge.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;")` (idem `#27ae60` pour Vert, `#2980b9` pour Bleu).
 4. **`laZoneDeCouleurExiste`** : créez un `Pane` avec l'id `zone` et placez-le au centre du BorderPane avec `setCenter()`. Donnez-lui une taille minimale avec `zone.setMinSize(300, 200)`.
-5. **`leLabelCompteursExiste`** : créez un `Label` avec l'id `compteurs` et le texte initial `"Rouge: 0  Vert: 0  Bleu: 0"`. Placez-le dans `borderPane.setBottom()`.
+5. **`leLabelCompteursExiste`** : créez un `Label` avec l'id `compteurs` et le texte initial `"Rouge: 0  Vert: 0  Bleu: 0"`. Placez-le dans `borderPane.setBottom()`. Pour qu'il s'affiche **centré comme une barre de statut** (cf. maquette), donnez-lui `setMaxWidth(Double.MAX_VALUE)` + `setAlignment(Pos.CENTER)`.
 6. **`cliquerRougeMetLaZoneEnRouge`** : branchez un écouteur sur le bouton Rouge qui change le style de la zone avec `zone.setStyle("-fx-background-color: red;")`.
 7. **`cliquerVertMetLaZoneEnVert`** : même principe pour le bouton Vert avec `green`.
 8. **`cliquerBleuMetLaZoneEnBleu`** : même principe pour le bouton Bleu avec `blue`.
