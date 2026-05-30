@@ -554,17 +554,7 @@ Comme vu en [CM1 (slide 30)](https://iutinfoaix-r202.github.io/cours/cm1-fondati
 
 Cette métaphore se traduit par une hiérarchie d'objets imbriqués appelée **graphe de scène** (scene graph) :
 
-```mermaid
-graph BT
-    D["🏷️ <b>Label</b><br/>composant texte"] -- "placé dans" --> C["📦 <b>BorderPane</b><br/>conteneur racine"]
-    C -- "passé à" --> B["🎬 <b>Scene</b><br/>contenu de la fenêtre"]
-    B -- "attachée au" --> A["🖼️ <b>Stage</b><br/>la fenêtre"]
-    
-    style A fill:#4a90d9,color:white
-    style B fill:#7bb563,color:white
-    style C fill:#e8a838,color:white
-    style D fill:#d35f5f,color:white
-```
+<img alt="Graphe de scène : le Label est placé dans un BorderPane, passé à la Scene, elle-même attachée au Stage" src=".github/assets/ex3-graphe-scene.svg"/>
 
 On construit de l'intérieur vers l'extérieur :
 1. On crée un **Label** (le composant à afficher)
@@ -684,21 +674,7 @@ Voici l'interface que vous devez construire :
 
 L'interface est décomposée en **trois zones** dans un `BorderPane` :
 
-```mermaid
-graph BT
-    M["📁 <b>MenuBar</b><br/>Fichier, Aide"] -- "setTop()" --> BP["📦 <b>BorderPane</b><br/>racine"]
-    G["📋 <b>GridPane</b><br/>Nom + Email"] -- "setCenter()" --> BP
-    H["➡️ <b>HBox</b><br/>Valider, Annuler"] -- "setBottom()" --> BP
-    BP -- "passé à" --> S["🎬 <b>Scene</b>"]
-    S -- "attachée au" --> ST["🖼️ <b>Stage</b>"]
-
-    style ST fill:#4a90d9,color:white
-    style S fill:#7bb563,color:white
-    style BP fill:#e8a838,color:white
-    style M fill:#b0bec5,color:#333
-    style G fill:#b0bec5,color:#333
-    style H fill:#b0bec5,color:#333
-```
+<img alt="Décomposition en conteneurs : MenuBar (top), GridPane (center) et HBox (bottom) dans un BorderPane, passé à la Scene puis au Stage" src=".github/assets/ex4-conteneurs.svg"/>
 
 ### Découverte du code
 
@@ -788,19 +764,7 @@ L'interface est simple : un bouton "Clique-moi" et un label qui affiche le nombr
 
 ### Le graphe de scène
 
-```mermaid
-graph BT
-    B["🔘 <b>Button</b><br/>&quot;Clique-moi&quot;"] -- "enfant" --> V["📦 <b>VBox</b><br/>conteneur racine"]
-    L["🏷️ <b>Label</b><br/>&quot;0 clics&quot;"] -- "enfant" --> V
-    V -- "passé à" --> S["🎬 <b>Scene</b>"]
-    S -- "attachée au" --> ST["🖼️ <b>Stage</b>"]
-
-    style ST fill:#4a90d9,color:white
-    style S fill:#7bb563,color:white
-    style V fill:#e8a838,color:white
-    style B fill:#d35f5f,color:white
-    style L fill:#d35f5f,color:white
-```
+<img alt="Graphe de scène : un Button et un Label dans une VBox, passée à la Scene puis attachée au Stage" src=".github/assets/ex5-graphe-scene.svg"/>
 
 ### Comment fonctionne un événement
 
@@ -808,20 +772,7 @@ Ce mécanisme s'appelle le **pattern Observer** (vu en [CM1 (slide 51)](https://
 
 Quand l'utilisateur clique sur le bouton, JavaFX déclenche une chaîne d'appels :
 
-```mermaid
-sequenceDiagram
-    participant U as 👤 Utilisateur
-    participant B as Button
-    participant H as EventHandler
-    participant C as Compteur
-    participant L as Label
-
-    U->>B: clic
-    B->>H: handle(ActionEvent)
-    H->>C: incrementer()
-    C-->>H: valeur = N
-    H->>L: setText("N clics")
-```
+<img alt="Chaîne d'un événement : clic sur le Button, EventHandler.handle, Compteur.incrementer, puis Label.setText" src=".github/assets/ex5-chaine-evenement.svg"/>
 
 La méthode `setOnAction()` du bouton enregistre un `EventHandler` : c'est l'objet qui sera appelé à chaque clic. À l'intérieur de `handle()`, on incrémente le compteur puis on met à jour le texte du label.
 
@@ -984,27 +935,7 @@ Vérifiez votre score sur l'onglet **Actions**. Il devrait avoir augmenté.
 
 L'interface est décomposée en **trois zones** dans un `BorderPane`, comme dans l'exercice 4 :
 
-```mermaid
-graph TD
-    ST["🖼️ <b>Stage</b>"] -->|"setScene()"| S["🎬 <b>Scene</b>"]
-    S -->|"racine"| BP["📦 <b>BorderPane</b>"]
-    BP -->|"setTop()"| H["➡️ <b>HBox</b>"]
-    BP -->|"setCenter()"| Z["🎨 <b>Pane</b><br/>zone de couleur"]
-    BP -->|"setBottom()"| L["🏷️ <b>Label</b><br/>&quot;Rouge: 0 ...&quot;"]
-    H --- BR["🔴 <b>Button</b><br/>&quot;Rouge&quot;"]
-    H --- BV["🟢 <b>Button</b><br/>&quot;Vert&quot;"]
-    H --- BB["🔵 <b>Button</b><br/>&quot;Bleu&quot;"]
-
-    style ST fill:#4a90d9,color:white
-    style S fill:#7bb563,color:white
-    style BP fill:#e8a838,color:white
-    style H fill:#b0bec5,color:#333
-    style Z fill:#b0bec5,color:#333
-    style L fill:#b0bec5,color:#333
-    style BR fill:#e74c3c,color:white
-    style BV fill:#27ae60,color:white
-    style BB fill:#2980b9,color:white
-```
+<img alt="Graphe de scène de la palette : Stage, Scene, BorderPane avec HBox (boutons Rouge/Vert/Bleu), Pane de couleur et Label" src=".github/assets/ex6-graphe-scene.svg"/>
 
 ### Découverte du code
 
@@ -1126,23 +1057,7 @@ L'interface se décompose verticalement dans un `VBox` :
 
 Une [`TranslateTransition`](https://openjfx.io/javadoc/25/javafx.graphics/javafx/animation/TranslateTransition.html) déplace un noeud (ici le cercle) en modifiant sa propriété `translateY` au fil du temps :
 
-```mermaid
-sequenceDiagram
-    participant U as 👤 Utilisateur
-    participant B as Button Démarrer
-    participant T as TranslateTransition
-    participant C as Circle (balle)
-
-    U->>B: clic
-    B->>T: playFromStart()
-    loop toutes les N ms
-        T->>C: setTranslateY(y)
-        Note right of C: y varie de 10 à 400<br/>puis de 400 à 10 (autoReverse)
-    end
-    U->>B: clic Pause
-    B->>T: pause()
-    Note right of T: l'animation se fige
-```
+<img alt="Animation : un clic lance la TranslateTransition qui appelle setTranslateY en boucle ; un second clic met en pause" src=".github/assets/bonus7-animation.svg"/>
 
 La propriété `rate` de la transition contrôle la vitesse : `rate=1` est la vitesse normale, `rate=2` est deux fois plus rapide, `rate=0.5` deux fois plus lent. Le slider ajuste cette propriété en temps réel.
 
@@ -1172,23 +1087,7 @@ Ce code est exécuté à chaque fois que la valeur du slider change. `nouvelleVa
 
 ### Le graphe de scène
 
-```mermaid
-graph TD
-    ST["🖼️ <b>Stage</b>"] -->|"setScene()"| S["🎬 <b>Scene</b>"]
-    S -->|"racine"| V["📦 <b>VBox</b>"]
-    V --> H["➡️ <b>HBox</b><br/>Démarrer · Pause · Reprendre · Stop"]
-    V --> SL["🎚️ <b>Slider</b><br/>0.1 - 5.0"]
-    V --> P["📦 <b>Pane</b><br/>zone d'animation"]
-    P --> C["🔴 <b>Circle</b><br/>rayon 15"]
-
-    style ST fill:#4a90d9,color:white
-    style S fill:#7bb563,color:white
-    style V fill:#e8a838,color:white
-    style H fill:#b0bec5,color:#333
-    style SL fill:#b0bec5,color:#333
-    style P fill:#b0bec5,color:#333
-    style C fill:#e74c3c,color:white
-```
+<img alt="Graphe de scène : Stage, Scene, VBox contenant la HBox des boutons, le Slider et le Pane d'animation avec le Circle" src=".github/assets/bonus7-graphe-scene.svg"/>
 
 ### Découverte du code
 
@@ -1303,31 +1202,7 @@ Le plateau de jeu est un `Pane` de 640x480 pixels. Les personnages se déplacent
 
 ### Le graphe de scène
 
-```mermaid
-graph TD
-    ST["🖼️ <b>Stage</b>"] -->|"setScene()"| S["🎬 <b>Scene</b><br/>setOnKeyPressed()"]
-    S -->|"racine"| P["📦 <b>Pane</b><br/>plateau 640×480"]
-    P --> PAC["🟡 <b>Pacman</b> (Group)"]
-    P --> FAN["🔵 <b>Fantome</b> (Group)"]
-    PAC --> C1["⭕ Circle<br/>corps jaune"]
-    PAC --> L1["➖ Line<br/>bouche"]
-    FAN --> R1["▬ Rectangle<br/>bas du corps"]
-    FAN --> C2["⭕ Circle<br/>corps bleu"]
-    FAN --> OG["👁️ œil gauche<br/>+ rétine"]
-    FAN --> OD["👁️ œil droit<br/>+ rétine"]
-
-    style ST fill:#4a90d9,color:white
-    style S fill:#7bb563,color:white
-    style P fill:#1a1a2e,color:#e0e0e0
-    style PAC fill:#f1c40f,color:#333
-    style FAN fill:#3498db,color:white
-    style C1 fill:#f1c40f,color:#333
-    style L1 fill:#333,color:white
-    style R1 fill:#3498db,color:white
-    style C2 fill:#3498db,color:white
-    style OG fill:#ecf0f1,color:#333
-    style OD fill:#ecf0f1,color:#333
-```
+<img alt="Graphe de scène du jeu : Stage, Scene (setOnKeyPressed), Pane plateau contenant les Groups Pacman et Fantome et leurs formes" src=".github/assets/bonus8-graphe-scene.svg"/>
 
 Chaque personnage est un `Group` qui contient ses formes géométriques. Le `Pane` sert de plateau de jeu, et la `Scene` capture les événements clavier via `setOnKeyPressed()`.
 
@@ -1335,37 +1210,7 @@ Chaque personnage est un `Group` qui contient ses formes géométriques. Le `Pan
 
 L'exercice utilise l'**héritage** : `Pacman` et `Fantome` héritent de `Personnage`, qui hérite lui-même de `Group`.
 
-```mermaid
-classDiagram
-    Group <|-- Personnage
-    Personnage <|-- Pacman
-    Personnage <|-- Fantome
-    
-    class Personnage {
-        #String direction
-        +directionGauche()
-        +directionDroite(largeurJeu)
-        +directionBas(hauteurJeu)
-        +directionHaut()
-        +collision(autre) boolean
-    }
-    
-    class Pacman {
-        -Circle corps
-        -Line bouche
-        +directionBas(hauteurJeu)
-        +directionHaut()
-    }
-    
-    class Fantome {
-        -Circle oeilGauche, oeilDroit
-        -Circle retineGauche, retineDroite
-        +directionGauche()
-        +directionDroite(largeurJeu)
-        +directionBas(hauteurJeu)
-        +directionHaut()
-    }
-```
+<img alt="Diagramme de classes : Pacman et Fantome héritent de Personnage, qui hérite de Group" src=".github/assets/bonus8-classes.svg"/>
 
 ### Ce qui est fourni vs ce qui est à compléter
 
