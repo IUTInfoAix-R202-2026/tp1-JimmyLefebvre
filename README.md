@@ -1409,7 +1409,7 @@ En cas de doute, demandez à Copilot Chat : `J'ai un conflit Git, comment le ré
 **Sur les machines de l'IUT** (Linux, SDKMAN pré-installé) :
 
 ```bash
-sdk install java 25.fx-zulu
+sdk install java 25.0.3-zulu   # JDK 25 standard : JavaFX 26 vient des deps Maven
 ```
 
 **Chez vous sous Linux / macOS** - installez d'abord SDKMAN depuis [sdkman.io](https://sdkman.io), puis la commande ci-dessus.
