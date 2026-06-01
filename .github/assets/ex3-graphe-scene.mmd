@@ -1,0 +1,10 @@
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}}}%%
+graph BT
+    D["🏷️ Label<br/>composant texte"] -- "placé dans" --> C["📦 BorderPane<br/>conteneur racine"]
+    C -- "passé à" --> B["🎬 Scene<br/>contenu de la fenêtre"]
+    B -- "attachée au" --> A["🖼️ Stage<br/>la fenêtre"]
+
+    style A fill:#4a90d9,color:white
+    style B fill:#7bb563,color:white
+    style C fill:#e8a838,color:white
+    style D fill:#d35f5f,color:white

@@ -1,0 +1,20 @@
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}}}%%
+graph TD
+    ST["🖼️ Stage"] -->|"setScene()"| S["🎬 Scene"]
+    S -->|"racine"| BP["📦 BorderPane"]
+    BP -->|"setTop()"| H["➡️ HBox"]
+    BP -->|"setCenter()"| Z["🎨 Pane<br/>zone de couleur"]
+    BP -->|"setBottom()"| L["🏷️ Label<br/>&quot;Rouge: 0 ...&quot;"]
+    H --- BR["🔴 Button<br/>&quot;Rouge&quot;"]
+    H --- BV["🟢 Button<br/>&quot;Vert&quot;"]
+    H --- BB["🔵 Button<br/>&quot;Bleu&quot;"]
+
+    style ST fill:#4a90d9,color:white
+    style S fill:#7bb563,color:white
+    style BP fill:#e8a838,color:white
+    style H fill:#b0bec5,color:#333
+    style Z fill:#b0bec5,color:#333
+    style L fill:#b0bec5,color:#333
+    style BR fill:#e74c3c,color:white
+    style BV fill:#27ae60,color:white
+    style BB fill:#2980b9,color:white

@@ -1,0 +1,46 @@
+@startuml
+' Diagramme de classes du bonus 8 (Pac-Man) : Personnage et ses deux
+' sous-classes Pacman / Fantome, qui heritent du Group JavaFX.
+' SVG regenere par .github/assets/render-diagrams.sh (Kroki local).
+' Bleu = classes ecrites dans le bonus ; gris = classe JavaFX fournie.
+hide empty members
+skinparam shadowing false
+skinparam dpi 120
+skinparam defaultFontSize 15
+skinparam defaultFontName Helvetica
+skinparam classAttributeIconSize 0
+skinparam classAttributeFontSize 14
+skinparam classBorderThickness 1.4
+skinparam ArrowColor #34495e
+
+class Group #EAECEE
+
+class Personnage #D4E6F1 {
+  #String direction
+  +directionGauche()
+  +directionDroite(largeurJeu)
+  +directionBas(hauteurJeu)
+  +directionHaut()
+  +collision(autre) : boolean
+}
+
+class Pacman #D4E6F1 {
+  -Circle corps
+  -Line bouche
+  +directionBas(hauteurJeu)
+  +directionHaut()
+}
+
+class Fantome #D4E6F1 {
+  -Circle oeilGauche, oeilDroit
+  -Circle retineGauche, retineDroite
+  +directionGauche()
+  +directionDroite(largeurJeu)
+  +directionBas(hauteurJeu)
+  +directionHaut()
+}
+
+Group <|-- Personnage
+Personnage <|-- Pacman
+Personnage <|-- Fantome
+@enduml

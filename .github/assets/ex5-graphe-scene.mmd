@@ -1,0 +1,12 @@
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}}}%%
+graph BT
+    B["🔘 Button<br/>&quot;Clique-moi&quot;"] -- "enfant" --> V["📦 VBox<br/>conteneur racine"]
+    L["🏷️ Label<br/>&quot;0 clics&quot;"] -- "enfant" --> V
+    V -- "passé à" --> S["🎬 Scene"]
+    S -- "attachée au" --> ST["🖼️ Stage"]
+
+    style ST fill:#4a90d9,color:white
+    style S fill:#7bb563,color:white
+    style V fill:#e8a838,color:white
+    style B fill:#d35f5f,color:white
+    style L fill:#d35f5f,color:white

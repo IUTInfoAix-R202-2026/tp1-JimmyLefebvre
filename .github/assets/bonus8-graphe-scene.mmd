@@ -1,0 +1,24 @@
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}}}%%
+graph TD
+    ST["🖼️ Stage"] -->|"setScene()"| S["🎬 Scene<br/>setOnKeyPressed()"]
+    S -->|"racine"| P["📦 Pane<br/>plateau 640×480"]
+    P --> PAC["🟡 Pacman (Group)"]
+    P --> FAN["🔵 Fantome (Group)"]
+    PAC --> C1["⭕ Circle<br/>corps jaune"]
+    PAC --> L1["➖ Line<br/>bouche"]
+    FAN --> R1["▬ Rectangle<br/>bas du corps"]
+    FAN --> C2["⭕ Circle<br/>corps bleu"]
+    FAN --> OG["👁️ œil gauche<br/>+ rétine"]
+    FAN --> OD["👁️ œil droit<br/>+ rétine"]
+
+    style ST fill:#4a90d9,color:white
+    style S fill:#7bb563,color:white
+    style P fill:#1a1a2e,color:#e0e0e0
+    style PAC fill:#f1c40f,color:#333
+    style FAN fill:#3498db,color:white
+    style C1 fill:#f1c40f,color:#333
+    style L1 fill:#333,color:white
+    style R1 fill:#3498db,color:white
+    style C2 fill:#3498db,color:white
+    style OG fill:#ecf0f1,color:#333
+    style OD fill:#ecf0f1,color:#333

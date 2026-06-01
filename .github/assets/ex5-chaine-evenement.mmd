@@ -1,0 +1,13 @@
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}}}%%
+sequenceDiagram
+    participant U as 👤 Utilisateur
+    participant B as Button
+    participant H as EventHandler
+    participant C as Compteur
+    participant L as Label
+
+    U->>B: clic
+    B->>H: handle(ActionEvent)
+    H->>C: incrementer()
+    C-->>H: valeur = N
+    H->>L: setText("N clics")

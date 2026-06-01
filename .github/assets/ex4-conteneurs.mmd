@@ -1,0 +1,14 @@
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}}}%%
+graph BT
+    M["📁 MenuBar<br/>Fichier, Aide"] -- "setTop()" --> BP["📦 BorderPane<br/>racine"]
+    G["📋 GridPane<br/>Nom + Email"] -- "setCenter()" --> BP
+    H["➡️ HBox<br/>Valider, Annuler"] -- "setBottom()" --> BP
+    BP -- "passé à" --> S["🎬 Scene"]
+    S -- "attachée au" --> ST["🖼️ Stage"]
+
+    style ST fill:#4a90d9,color:white
+    style S fill:#7bb563,color:white
+    style BP fill:#e8a838,color:white
+    style M fill:#b0bec5,color:#333
+    style G fill:#b0bec5,color:#333
+    style H fill:#b0bec5,color:#333

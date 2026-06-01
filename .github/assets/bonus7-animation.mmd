@@ -1,0 +1,16 @@
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}}}%%
+sequenceDiagram
+    participant U as 👤 Utilisateur
+    participant B as Button Démarrer
+    participant T as TranslateTransition
+    participant C as Circle (balle)
+
+    U->>B: clic
+    B->>T: playFromStart()
+    loop toutes les N ms
+        T->>C: setTranslateY(y)
+        Note right of C: y varie de 10 à 400<br/>puis de 400 à 10 (autoReverse)
+    end
+    U->>B: clic Pause
+    B->>T: pause()
+    Note right of T: l'animation se fige

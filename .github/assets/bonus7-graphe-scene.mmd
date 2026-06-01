@@ -1,0 +1,16 @@
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}}}%%
+graph TD
+    ST["🖼️ Stage"] -->|"setScene()"| S["🎬 Scene"]
+    S -->|"racine"| V["📦 VBox"]
+    V --> H["➡️ HBox<br/>Démarrer · Pause · Reprendre · Stop"]
+    V --> SL["🎚️ Slider<br/>0.1 - 5.0"]
+    V --> P["📦 Pane<br/>zone d'animation"]
+    P --> C["🔴 Circle<br/>rayon 15"]
+
+    style ST fill:#4a90d9,color:white
+    style S fill:#7bb563,color:white
+    style V fill:#e8a838,color:white
+    style H fill:#b0bec5,color:#333
+    style SL fill:#b0bec5,color:#333
+    style P fill:#b0bec5,color:#333
+    style C fill:#e74c3c,color:white
